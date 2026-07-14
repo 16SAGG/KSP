@@ -1,6 +1,13 @@
 import { useState } from 'react'
+import './Navbar.css'
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const handleLinkClick = () => {
+    setIsOpen(false)
+  }
+
   return (
     <div
         style={{
@@ -10,7 +17,7 @@ function Navbar() {
             background: '#FFF',
             height:'76px',
             borderBottom: '1px solid rgba(13, 27, 42, 0.08)',
-            boxShadow: 'rgba(13, 27, 42, 0.05) 0px 2px 14px;'
+            boxShadow: 'rgba(13, 27, 42, 0.05) 0px 2px 14px'
         }}
     >
         <div
@@ -41,52 +48,29 @@ function Navbar() {
                     }}
                 />
             </a>
-            <div
-                style={{
-                    display:'flex',
-                    alignItems:'center',
-                    gap:'36px'
-                }}
+            
+            {/* Hamburger Button */}
+            <button 
+                className={`hamburger-btn ${isOpen ? 'open' : ''}`}
+                onClick={() => setIsOpen(!isOpen)}
+                aria-label="Toggle navigation menu"
             >
-                <div
-                    style={{
-                        display:'flex',
-                        alignItems:'center',
-                        gap:'28px'
-                    }}
-                >
-                    <Link 
-                        text={'Home'}
-                        goTo={'#home'}
-                    />
-                    <Link 
-                        text={'About'}
-                        goTo={'#about'}
-                    />
-                    <Link 
-                        text={'Services'}
-                        goTo={'#services'}
-                    />
-                    <Link 
-                        text={'Projects'}
-                        goTo={'#projects'}
-                    />
-                    <Link 
-                        text={'Partners'}
-                        goTo={'#partners'}
-                    />
-                    <Link 
-                        text={'Contact'}
-                        goTo={'#contact'}
-                    />
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            {/* Mobile Dropdown Menu */}
+            <div className={`nav-mobile-menu ${isOpen ? 'open' : ''}`}>
+                <div className="nav-mobile-links">
+                    <Link text={'Home'} goTo={'#home'} onClick={handleLinkClick} />
+                    <Link text={'About'} goTo={'#about'} onClick={handleLinkClick} />
+                    <Link text={'Services'} goTo={'#services'} onClick={handleLinkClick} />
+                    <Link text={'Projects'} goTo={'#projects'} onClick={handleLinkClick} />
+                    <Link text={'Partners'} goTo={'#partners'} onClick={handleLinkClick} />
+                    <Link text={'Contact'} goTo={'#contact'} onClick={handleLinkClick} />
                 </div>
-                <div
-                    style={{
-                        display:'flex',
-                        alignItems: 'center',
-                        gap:'12px'
-                    }}
-                >
+                <div className="nav-mobile-actions">
                     <a
                         style={{
                             textDecoration: 'none',
@@ -98,6 +82,7 @@ function Navbar() {
                         }}
                         href="KSP Brochure - v2.pdf"
                         download
+                        onClick={handleLinkClick}
                     >
                         Brochure
                     </a>
@@ -111,6 +96,7 @@ function Navbar() {
                             borderRadius: '7px'
                         }}
                         href='#contact'
+                        onClick={handleLinkClick}
                     >
                         Let's Talk
                     </a>
@@ -123,7 +109,7 @@ function Navbar() {
 }
 
 
-function Link({text, goTo}) {
+function Link({text, goTo, onClick}) {
     return(
         <a
             style={{
@@ -132,6 +118,7 @@ function Link({text, goTo}) {
                 color: 'rgb(22, 35, 47)'
             }}
             href={goTo}
+            onClick={onClick}
         >
             {text}
         </a> 

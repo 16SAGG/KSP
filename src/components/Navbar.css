@@ -1,0 +1,114 @@
+/* Hamburger menu button - Always visible */
+.hamburger-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 100;
+}
+
+.hamburger-btn span {
+  width: 100%;
+  height: 2px;
+  background-color: rgb(22, 35, 47);
+  transition: all 0.3s ease-in-out;
+  transform-origin: left center;
+}
+
+/* Animate to X when open */
+.hamburger-btn.open span:nth-child(1) {
+  transform: rotate(45deg) translate(2px, -1px);
+}
+.hamburger-btn.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburger-btn.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(2px, 1px);
+}
+
+/* Dropdown menu - Desktop: right aligned panel, Mobile: full width */
+.nav-mobile-menu {
+  display: none;
+  position: absolute;
+  top: 76px;
+  right: 0;
+  width: 320px;
+  background: #FFF;
+  border-left: 1px solid rgba(13, 27, 42, 0.08);
+  border-bottom: 1px solid rgba(13, 27, 42, 0.08);
+  box-shadow: -5px 10px 30px rgba(13, 27, 42, 0.08);
+  padding: 30px 40px;
+  flex-direction: column;
+  gap: 24px;
+  z-index: 49;
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+.nav-mobile-menu.open {
+  display: flex;
+}
+
+.nav-mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.nav-mobile-links a {
+  padding: 8px 0;
+  transition: all 0.2s ease;
+  font: 600 15px "Source Sans 3", sans-serif;
+  color: rgb(22, 35, 47);
+  text-decoration: none;
+}
+
+.nav-mobile-links a:hover {
+  color: rgb(111, 207, 151) !important;
+  transform: translateX(5px);
+}
+
+.nav-mobile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(13, 27, 42, 0.08);
+}
+
+.nav-mobile-actions a {
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.nav-mobile-actions a:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Slide down animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsive rules */
+@media (max-width: 480px) {
+  .nav-mobile-menu {
+    width: 100%;
+    border-left: none;
+    box-shadow: 0 10px 30px rgba(13, 27, 42, 0.08);
+    padding: 24px 30px;
+  }
+}
