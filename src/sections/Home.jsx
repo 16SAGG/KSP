@@ -1,6 +1,34 @@
-import { useState } from 'react'
+import { useLanguage } from '../LanguageContext'
+
+const homeTranslations = {
+  en: {
+    tag: "Export & Supply · Oil, Gas & Energy",
+    title: "The trusted bridge between Europe and the world's industrial and energy markets.",
+    desc: "The accountable partner for specialized supply, commercialization and the qualified technical support in the field — where the scope of a specific equipment sale requires it — across the commercial, industrial, and energy sectors.",
+    letsTalk: "Let's Talk",
+    downloadBrochure: "Download Brochure",
+    dualTitle: "A dual capability that is uncommon in our markets.",
+    dualDesc1: "KSP Projectos is an export and supply company based in Portugal, specialized in providing equipment, raw materials, and products for the oil and gas industry, and for the commercial and energy sectors, to clients across Europe, America, Africa, and Asia. In addition to industrial supply, we actively engage in the commercialization of hydrocarbons and essential energy commodities.",
+    dualDesc2: "We complement that supply with qualified technical support in the field — installation accompaniment, calibration, testing, and related engineering services — deployed selectively, on a case-by-case basis.",
+    imgAlt: "Engineer reviewing a 3D piping model"
+  },
+  pt: {
+    tag: "Exportação & Fornecimento · Petróleo, Gás & Energia",
+    title: "A ponte de confiança entre a Europa e os mercados mundiais de energia e indústria.",
+    desc: "O parceiro responsável pelo fornecimento especializado, comercialização e apoio técnico qualificado no terreno — onde o âmbito de uma venda de equipamento específico o exija — nos setores comercial, industrial e de energia.",
+    letsTalk: "Fale Connosco",
+    downloadBrochure: "Descarregar Brochura",
+    dualTitle: "Uma capacidade dupla que é invulgar nos nossos mercados.",
+    dualDesc1: "A KSP Projectos é uma empresa de exportação e fornecimento sediada em Portugal, especializada no fornecimento de equipamentos, matérias-primas e produtos para a indústria de petróleo e gás, e para os setores comercial e de energia, a clientes em toda a Europa, América, África e Ásia. Além do fornecimento industrial, participamos ativamente na comercialização de hidrocarbonetos e commodities energéticas essenciais.",
+    dualDesc2: "Complementamos esse fornecimento com apoio técnico qualificado no terreno — acompanhamento de instalação, calibração, testes e serviços de engenharia relacionados — disponibilizados seletivamente, caso a caso.",
+    imgAlt: "Engenheiro a rever um modelo de tubagens 3D"
+  }
+}
 
 function Home() {
+  const { lang } = useLanguage()
+  const t = homeTranslations[lang] || homeTranslations.en
+
   return (
     <div id='home'>
         <div
@@ -48,7 +76,7 @@ function Home() {
                             marginBottom: '16px'
                         }}
                     >
-                        Export & Supply · Oil, Gas & Energy
+                        {t.tag}
                     </p>
                     <h1
                         style={{
@@ -57,7 +85,7 @@ function Home() {
                             margin: '0px 0px 20px'
                         }}
                     >
-                        The trusted bridge between Europe and the world's industrial and energy markets.
+                        {t.title}
                     </h1>
                     <p
                         style={{
@@ -67,7 +95,7 @@ function Home() {
                             maxWidth: '560px'
                         }}
                     >
-                        The accountable partner for specialized supply, commercialization and the qualified technical support in the field — where the scope of a specific equipment sale requires it — across the commercial, industrial, and energy sectors.
+                        {t.desc}
                     </p>
                     <div
                         style={{
@@ -87,7 +115,7 @@ function Home() {
                             }}
                             href='#contact'
                         >
-                            Let's Talk
+                            {t.letsTalk}
                         </a>
                         <a
                             style={{
@@ -101,7 +129,7 @@ function Home() {
                             href="KSP Brochure - v2.pdf"
                             download
                         >
-                            Download Brochure
+                            {t.downloadBrochure}
                         </a>
                         
                     </div>
@@ -137,7 +165,7 @@ function Home() {
                                 margin: '0px 0px 20px' 
                             }}
                         >
-                            A dual capability that is uncommon in our markets.
+                            {t.dualTitle}
                         </h2>
                         
                         <p 
@@ -156,7 +184,7 @@ function Home() {
                                     lineHeight: '28px' 
                                 }}
                             >
-                                KSP Projectos is an export and supply company based in Portugal, specialized in providing equipment, raw materials, and products for the oil and gas industry, and for the commercial and energy sectors, to clients across Europe, America, Africa, and Asia. In addition to industrial supply, we actively engage in the commercialization of hydrocarbons and essential energy commodities.
+                                {t.dualDesc1}
                             </span>
                         </p>
                         
@@ -168,14 +196,14 @@ function Home() {
                                 margin: '0px' 
                             }}
                         >
-                            We complement that supply with qualified technical support in the field — installation accompaniment, calibration, testing, and related engineering services — deployed selectively, on a case-by-case basis.
+                            {t.dualDesc2}
                         </p>
                     </div>
                     <div data-dc-tpl="44" style={{ flex: '1 1 380px', minWidth: '300px' }}>
                         <img 
                             data-dc-tpl="45" 
                             src="engineer-3d-model.png" 
-                            alt="Engineer reviewing a 3D piping model" 
+                            alt={t.imgAlt} 
                             style={{ 
                             width: '100%', 
                             borderRadius: '12px', 

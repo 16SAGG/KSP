@@ -1,6 +1,69 @@
 import { useState } from 'react'
+import { useLanguage } from '../LanguageContext'
+
+const contactTranslations = {
+  en: {
+    tag: "Contact",
+    title: "One partner, accountable from end to end.",
+    desc: "Tell us about your project in the commercial, industrial, or energy sectors. We coordinate supply and engineering under one roof.",
+    website: "Website",
+    phone: "Phone",
+    email: "Email",
+    legalName: "Legal Name",
+    taxId: "Tax ID",
+    headquarters: "Headquarters / Reach",
+    reachDesc: "Portugal, Europe — serving Europe, America, Africa, Asia",
+    downloadBrochure: "Download Brochure",
+    formTitle: "Send us a message",
+    fieldName: "Name",
+    placeholderName: "Your name",
+    fieldEmail: "Email",
+    fieldCompany: "Company",
+    placeholderCompany: "Company name",
+    fieldMessage: "Message",
+    placeholderMessage: "Tell us about your project",
+    sendButton: "Send Message",
+    mailSubject: "New Project Inquiry",
+    mailLabelName: "Name",
+    mailLabelEmail: "Email",
+    mailLabelCompany: "Company",
+    mailLabelNotSpecified: "Not specified",
+    mailLabelMessage: "Message"
+  },
+  pt: {
+    tag: "Contacto",
+    title: "Um único parceiro, responsável de ponta a ponta.",
+    desc: "Fale-nos sobre o seu projeto nos setores comercial, industrial ou de energia. Coordenamos o fornecimento e a engenharia sob o mesmo teto.",
+    website: "Website",
+    phone: "Telefone",
+    email: "E-mail",
+    legalName: "Denominação Social",
+    taxId: "NIF",
+    headquarters: "Sede / Alcance",
+    reachDesc: "Portugal, Europa — servindo a Europa, América, África e Ásia",
+    downloadBrochure: "Descarregar Brochura",
+    formTitle: "Envie-nos uma mensagem",
+    fieldName: "Nome",
+    placeholderName: "O seu nome",
+    fieldEmail: "E-mail",
+    fieldCompany: "Empresa",
+    placeholderCompany: "Nome da empresa",
+    fieldMessage: "Mensagem",
+    placeholderMessage: "Fale-nos sobre o seu projeto",
+    sendButton: "Enviar Mensagem",
+    mailSubject: "Pedido de Informação de Projeto",
+    mailLabelName: "Nome",
+    mailLabelEmail: "E-mail",
+    mailLabelCompany: "Empresa",
+    mailLabelNotSpecified: "Não especificada",
+    mailLabelMessage: "Mensagem"
+  }
+}
 
 function Contact(){
+    const { lang } = useLanguage()
+    const t = contactTranslations[lang] || contactTranslations.en
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -10,7 +73,6 @@ function Contact(){
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        console.log(name)
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
@@ -22,9 +84,6 @@ function Contact(){
     const handleSubmit = (e) => {
         e.preventDefault();
         
-        console.log("aaaa", formData.name.trim());
-        console.log("aaaa", formData.email.trim());
-        console.log("aaaa", formData.message.trim());
         if (!isFormFilled) return
 
         const { name, email, company, message } = formData;
@@ -33,14 +92,14 @@ function Contact(){
         const emailTo = "contato@ksprojectos.pt"; 
         
         // Asunto del correo electrónico
-        const subject = encodeURIComponent(`New Project Inquiry - ${name}`);
+        const subject = encodeURIComponent(`${t.mailSubject} - ${name}`);
         
         // Cuerpo del correo (formateando los saltos de línea con \n)
         const body = encodeURIComponent(
-        `Name: ${name}\n` +
-        `Email: ${email}\n` +
-        `Company: ${company || 'Not specified'}\n\n` +
-        `Message:\n${message}`
+        `${t.mailLabelName}: ${name}\n` +
+        `${t.mailLabelEmail}: ${email}\n` +
+        `${t.mailLabelCompany}: ${company || t.mailLabelNotSpecified}\n\n` +
+        `${t.mailLabelMessage}:\n${message}`
         );
 
         // Abrir el cliente de correo nativo del usuario con los datos pre-llenados
@@ -61,13 +120,13 @@ function Contact(){
                     marginBottom: '14px' 
                     }}
                 >
-                    Contact
+                    {t.tag}
                 </div>
                 <h1 data-dc-tpl="169" style={{ font: '800 36px / 1.25 Sora, sans-serif', color: 'rgb(255, 255, 255)', margin: '0px 0px 16px' }}>
-                    One partner, accountable from end to end.
+                    {t.title}
                 </h1>
                 <p data-dc-tpl="170" style={{ font: '400 16px / 1.6 "Source Sans 3", sans-serif', color: 'rgba(255, 255, 255, 0.75)', margin: '0px' }}>
-                    Tell us about your project in the commercial, industrial, or energy sectors. We coordinate supply and engineering under one roof.
+                    {t.desc}
                 </p>
                 </div>
             </div>
@@ -87,34 +146,33 @@ function Contact(){
                 <div data-dc-tpl="172">
                 <div data-dc-tpl="173" style={{ display: 'flex', flexDirection: 'column', gap: '26px' }}>
                     <div data-dc-tpl="174">
-                    <div data-dc-tpl="175" style={{ font: '600 11.5px "Source Sans 3", sans-serif', letterSpacing: '1.2px', color: 'rgb(63, 168, 115)', textTransform: 'uppercase', marginBottom: '8px' }}>Website</div>
+                    <div data-dc-tpl="175" style={{ font: '600 11.5px "Source Sans 3", sans-serif', letterSpacing: '1.2px', color: 'rgb(63, 168, 115)', textTransform: 'uppercase', marginBottom: '8px' }}>{t.website}</div>
                     <div data-dc-tpl="176" style={{ font: '600 16px "Source Sans 3", sans-serif', color: 'rgb(13, 27, 42)' }}>ksprojectos.pt</div>
                     </div>
                     <div data-dc-tpl="177">
-                    <div data-dc-tpl="178" style={{ font: '600 11.5px "Source Sans 3", sans-serif', letterSpacing: '1.2px', color: 'rgb(63, 168, 115)', textTransform: 'uppercase', marginBottom: '8px' }}>Phone</div>
+                    <div data-dc-tpl="178" style={{ font: '600 11.5px "Source Sans 3", sans-serif', letterSpacing: '1.2px', color: 'rgb(63, 168, 115)', textTransform: 'uppercase', marginBottom: '8px' }}>{t.phone}</div>
                     <div data-dc-tpl="179" style={{ font: '600 16px "Source Sans 3", sans-serif', color: 'rgb(13, 27, 42)' }}>+351 (911) 184 324</div>
                     </div>
                     <div data-dc-tpl="180">
-                    <div data-dc-tpl="181" style={{ font: '600 11.5px "Source Sans 3", sans-serif', letterSpacing: '1.2px', color: 'rgb(63, 168, 115)', textTransform: 'uppercase', marginBottom: '8px' }}>Email</div>
+                    <div data-dc-tpl="181" style={{ font: '600 11.5px "Source Sans 3", sans-serif', letterSpacing: '1.2px', color: 'rgb(63, 168, 115)', textTransform: 'uppercase', marginBottom: '8px' }}>{t.email}</div>
                     <div data-dc-tpl="182" style={{ font: '600 16px "Source Sans 3", sans-serif', color: 'rgb(13, 27, 42)' }}>contato@ksprojectos.pt</div>
                     </div>
                     <div data-dc-tpl="183">
-                    <div data-dc-tpl="184" style={{ font: '600 11.5px "Source Sans 3", sans-serif', letterSpacing: '1.2px', color: 'rgb(63, 168, 115)', textTransform: 'uppercase', marginBottom: '8px' }}>Legal Name</div>
+                    <div data-dc-tpl="184" style={{ font: '600 11.5px "Source Sans 3", sans-serif', letterSpacing: '1.2px', color: 'rgb(63, 168, 115)', textTransform: 'uppercase', marginBottom: '8px' }}>{t.legalName}</div>
                     <div data-dc-tpl="185" style={{ font: '600 16px "Source Sans 3", sans-serif', color: 'rgb(13, 27, 42)' }}>Kinetic Scale Projectos, LDA</div>
                     </div>
                     <div data-dc-tpl="186">
-                    <div data-dc-tpl="187" style={{ font: '600 11.5px "Source Sans 3", sans-serif', letterSpacing: '1.2px', color: 'rgb(63, 168, 115)', textTransform: 'uppercase', marginBottom: '8px' }}>Tax ID</div>
+                    <div data-dc-tpl="187" style={{ font: '600 11.5px "Source Sans 3", sans-serif', letterSpacing: '1.2px', color: 'rgb(63, 168, 115)', textTransform: 'uppercase', marginBottom: '8px' }}>{t.taxId}</div>
                     <div data-dc-tpl="188" style={{ font: '600 16px "Source Sans 3", sans-serif', color: 'rgb(13, 27, 42)' }}>PT-516835750</div>
                     </div>
                     <div data-dc-tpl="189">
-                    <div data-dc-tpl="190" style={{ font: '600 11.5px "Source Sans 3", sans-serif', letterSpacing: '1.2px', color: 'rgb(63, 168, 115)', textTransform: 'uppercase', marginBottom: '8px' }}>Headquarters / Reach</div>
-                    <div data-dc-tpl="191" style={{ font: '600 16px "Source Sans 3", sans-serif', color: 'rgb(13, 27, 42)' }}>Portugal, Europe — serving Europe, America, Africa, Asia</div>
+                    <div data-dc-tpl="190" style={{ font: '600 11.5px "Source Sans 3", sans-serif', letterSpacing: '1.2px', color: 'rgb(63, 168, 115)', textTransform: 'uppercase', marginBottom: '8px' }}>{t.headquarters}</div>
+                    <div data-dc-tpl="191" style={{ font: '600 16px "Source Sans 3", sans-serif', color: 'rgb(13, 27, 42)' }}>{t.reachDesc}</div>
                     </div>
                     <a 
                     data-dc-tpl="192" 
-                    href="KSP Brochure.dc.html" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
+                    href="KSP Brochure - v2.pdf" 
+                    download
                     className="scp2" 
                     style={{ 
                         textDecoration: 'none', 
@@ -124,12 +182,11 @@ function Contact(){
                         background: 'rgb(111, 207, 151)', 
                         padding: '14px 24px', 
                         borderRadius: '8px', 
-                        marginTop: '6px' 
+                        marginTop: '6px',
+                        textAlign: 'center'
                     }}
-                    href="KSP Brochure - v2.pdf"
-                    download
                     >
-                    Download Brochure
+                    {t.downloadBrochure}
                     </a>
                 </div>
                 </div>
@@ -137,16 +194,15 @@ function Contact(){
                 {/* Columna del Formulario */}
                 <div data-dc-tpl="193" style={{ background: 'rgb(255, 255, 255)', border: '1px solid rgba(13, 27, 42, 0.08)', borderRadius: '14px', padding: '36px' }}>
                 <div data-dc-tpl="200">
-                    <div data-dc-tpl="201" style={{ font: '700 19px Sora, sans-serif', color: 'rgb(13, 27, 42)', marginBottom: '22px' }}>Send us a message</div>
+                    <div data-dc-tpl="201" style={{ font: '700 19px Sora, sans-serif', color: 'rgb(13, 27, 42)', marginBottom: '22px' }}>{t.formTitle}</div>
                     <div data-dc-tpl="202" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                     
                     <div data-dc-tpl="203">
-                        <div data-dc-tpl="204" style={{ font: '600 12px "Source Sans 3", sans-serif', color: 'rgba(22, 35, 47, 0.55)', marginBottom: '6px' }}>Name</div>
+                        <div data-dc-tpl="204" style={{ font: '600 12px "Source Sans 3", sans-serif', color: 'rgba(22, 35, 47, 0.55)', marginBottom: '6px' }}>{t.fieldName}</div>
                         <input 
                         data-dc-tpl="205" 
-                        placeholder="Your name" 
+                        placeholder={t.placeholderName} 
                         className="scp4" 
-                        defaultValue="" 
                         style={{ 
                             width: '100%', 
                             boxSizing: 'border-box', 
@@ -163,12 +219,11 @@ function Contact(){
                     </div>
 
                     <div data-dc-tpl="206">
-                        <div data-dc-tpl="207" style={{ font: '600 12px "Source Sans 3", sans-serif', color: 'rgba(22, 35, 47, 0.55)', marginBottom: '6px' }}>Email</div>
+                        <div data-dc-tpl="207" style={{ font: '600 12px "Source Sans 3", sans-serif', color: 'rgba(22, 35, 47, 0.55)', marginBottom: '6px' }}>{t.fieldEmail}</div>
                         <input 
                         data-dc-tpl="208" 
                         placeholder="you@company.com" 
                         className="scp4" 
-                        defaultValue="" 
                         style={{ 
                             width: '100%', 
                             boxSizing: 'border-box', 
@@ -185,12 +240,11 @@ function Contact(){
                     </div>
 
                     <div data-dc-tpl="209">
-                        <div data-dc-tpl="210" style={{ font: '600 12px "Source Sans 3", sans-serif', color: 'rgba(22, 35, 47, 0.55)', marginBottom: '6px' }}>Company</div>
+                        <div data-dc-tpl="210" style={{ font: '600 12px "Source Sans 3", sans-serif', color: 'rgba(22, 35, 47, 0.55)', marginBottom: '6px' }}>{t.fieldCompany}</div>
                         <input 
                         data-dc-tpl="211" 
-                        placeholder="Company name" 
+                        placeholder={t.placeholderCompany} 
                         className="scp4" 
-                        defaultValue="" 
                         style={{ 
                             width: '100%', 
                             boxSizing: 'border-box', 
@@ -207,10 +261,10 @@ function Contact(){
                     </div>
 
                     <div data-dc-tpl="212">
-                        <div data-dc-tpl="213" style={{ font: '600 12px "Source Sans 3", sans-serif', color: 'rgba(22, 35, 47, 0.55)', marginBottom: '6px' }}>Message</div>
+                        <div data-dc-tpl="213" style={{ font: '600 12px "Source Sans 3", sans-serif', color: 'rgba(22, 35, 47, 0.55)', marginBottom: '6px' }}>{t.fieldMessage}</div>
                         <textarea 
                         data-dc-tpl="214" 
-                        placeholder="Tell us about your project" 
+                        placeholder={t.placeholderMessage} 
                         rows={4} 
                         className="scp4" 
                         style={{ 
@@ -256,7 +310,7 @@ function Contact(){
                         }}
                         onClick={handleSubmit}
                     >
-                        Send Message
+                        {t.sendButton}
                     </div>
                     </div>
                 </div>

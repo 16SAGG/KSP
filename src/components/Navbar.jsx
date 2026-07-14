@@ -1,8 +1,35 @@
 import { useState } from 'react'
+import { useLanguage } from '../LanguageContext'
 import './Navbar.css'
+
+const menuTranslations = {
+  en: {
+    home: 'Home',
+    about: 'About',
+    services: 'Services',
+    projects: 'Projects',
+    partners: 'Partners',
+    contact: 'Contact',
+    brochure: 'Brochure',
+    letsTalk: "Let's Talk"
+  },
+  pt: {
+    home: 'Início',
+    about: 'Sobre Nós',
+    services: 'Serviços',
+    projects: 'Projetos',
+    partners: 'Parceiros',
+    contact: 'Contacto',
+    brochure: 'Brochura',
+    letsTalk: 'Fale Connosco'
+  }
+}
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const { lang, changeLanguage } = useLanguage()
+
+  const t = menuTranslations[lang] || menuTranslations.en
 
   const handleLinkClick = () => {
     setIsOpen(false)
@@ -49,26 +76,66 @@ function Navbar() {
                 />
             </a>
             
-            {/* Hamburger Button */}
-            <button 
-                className={`hamburger-btn ${isOpen ? 'open' : ''}`}
-                onClick={() => setIsOpen(!isOpen)}
-                aria-label="Toggle navigation menu"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+                {/* Language Switcher */}
+                <div 
+                    style={{ 
+                        display: 'flex', 
+                        alignItems: 'center',
+                        gap: '6px', 
+                        font: '600 13.5px "Source Sans 3", sans-serif',
+                        background: 'rgba(13, 27, 42, 0.03)',
+                        padding: '6px 12px',
+                        borderRadius: '20px',
+                        border: '1px solid rgba(13, 27, 42, 0.08)'
+                    }}
+                >
+                    <span 
+                        onClick={() => changeLanguage('en')} 
+                        style={{ 
+                            color: lang === 'en' ? 'rgb(111, 207, 151)' : 'rgba(22, 35, 47, 0.6)', 
+                            cursor: 'pointer',
+                            fontWeight: lang === 'en' ? '700' : '600',
+                            transition: 'color 0.2s ease'
+                        }}
+                    >
+                        EN
+                    </span>
+                    <span style={{ color: 'rgba(13, 27, 42, 0.15)' }}>|</span>
+                    <span 
+                        onClick={() => changeLanguage('pt')} 
+                        style={{ 
+                            color: lang === 'pt' ? 'rgb(111, 207, 151)' : 'rgba(22, 35, 47, 0.6)', 
+                            cursor: 'pointer',
+                            fontWeight: lang === 'pt' ? '700' : '600',
+                            transition: 'color 0.2s ease'
+                        }}
+                    >
+                        PT
+                    </span>
+                </div>
+
+                {/* Hamburger Button */}
+                <button 
+                    className={`hamburger-btn ${isOpen ? 'open' : ''}`}
+                    onClick={() => setIsOpen(!isOpen)}
+                    aria-label="Toggle navigation menu"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
 
             {/* Mobile Dropdown Menu */}
             <div className={`nav-mobile-menu ${isOpen ? 'open' : ''}`}>
                 <div className="nav-mobile-links">
-                    <Link text={'Home'} goTo={'#home'} onClick={handleLinkClick} />
-                    <Link text={'About'} goTo={'#about'} onClick={handleLinkClick} />
-                    <Link text={'Services'} goTo={'#services'} onClick={handleLinkClick} />
-                    <Link text={'Projects'} goTo={'#projects'} onClick={handleLinkClick} />
-                    <Link text={'Partners'} goTo={'#partners'} onClick={handleLinkClick} />
-                    <Link text={'Contact'} goTo={'#contact'} onClick={handleLinkClick} />
+                    <Link text={t.home} goTo={'#home'} onClick={handleLinkClick} />
+                    <Link text={t.about} goTo={'#about'} onClick={handleLinkClick} />
+                    <Link text={t.services} goTo={'#services'} onClick={handleLinkClick} />
+                    <Link text={t.projects} goTo={'#projects'} onClick={handleLinkClick} />
+                    <Link text={t.partners} goTo={'#partners'} onClick={handleLinkClick} />
+                    <Link text={t.contact} goTo={'#contact'} onClick={handleLinkClick} />
                 </div>
                 <div className="nav-mobile-actions">
                     <a
@@ -84,7 +151,7 @@ function Navbar() {
                         download
                         onClick={handleLinkClick}
                     >
-                        Brochure
+                        {t.brochure}
                     </a>
                     <a
                         style={{
@@ -98,7 +165,7 @@ function Navbar() {
                         href='#contact'
                         onClick={handleLinkClick}
                     >
-                        Let's Talk
+                        {t.letsTalk}
                     </a>
                 </div>
             </div>

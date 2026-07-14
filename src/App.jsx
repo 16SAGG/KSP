@@ -1,5 +1,5 @@
-import { useState } from 'react'
 import './App.css'
+import { LanguageProvider } from './LanguageContext'
 import Navbar from './components/Navbar'
 import Home from './sections/Home'
 import About from './sections/About'
@@ -10,26 +10,26 @@ import Contact from './sections/Contact'
 import Footer from './components/Footer'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div
-      style={{
-        background:'#fff',
-        minHeight:'100vh'
-      }}
-    >
-      <div>
-        <Navbar/>
-        <Home/>
-        <About/>
-        <Services/>
-        <Projects/>
-        <Partners/>
-        <Contact/>
-        <Footer/>
+    <LanguageProvider>
+      <div
+        style={{
+          background:'#fff',
+          minHeight:'100vh'
+        }}
+      >
+        <div>
+          <Navbar/>
+          <Home/>
+          <About/>
+          <Services/>
+          <Projects/>
+          <Partners/>
+          <Contact/>
+          <Footer/>
+        </div>
       </div>
-    </div>
+    </LanguageProvider>
   )
 }
 
