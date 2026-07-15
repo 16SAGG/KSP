@@ -20,7 +20,7 @@ const aboutTranslations = {
     value3Desc: "Deep specialization in oil, gas, petrochemical, and energy sectors, with supply of equipment and material.",
     value4Title: "Support Where It Counts",
     value4Desc: "Technical support (installation accompaniment, calibration, risk and reliability studies, engineering, and project technical assistance) is selectively applied to engagements where it reduces real execution risk for the client.",
-    cycleTitle: "From customer needs to customer satisfaction.",
+    cycleTitle: "From customer needs to customer satisfaction, guided by our process map.",
     cycleNeeds: "Customer Needs",
     cycleSatisfaction: "Customer Satisfaction",
     cycleGovernance: "Governed by the strategies, policies, standards, laws, and procedures for import and export in each country",
@@ -51,7 +51,7 @@ const aboutTranslations = {
     value3Desc: "Especialização profunda nos setores de petróleo, gás, petroquímica e energia, com fornecimento de equipamentos e materiais.",
     value4Title: "Suporte Onde Realmente Importa",
     value4Desc: "O suporte técnico (acompanhamento de instalação, calibração, estudos de risco e fiabilidade, engenharia e assistência técnica de projeto) é aplicado seletivamente a compromissos onde reduz o risco real de execução para o cliente.",
-    cycleTitle: "Das necessidades do cliente à satisfação do cliente.",
+    cycleTitle: "Desde as necessidades dos clientes até à satisfação dos clientes, orientados pelo nosso mapa de processos.",
     cycleNeeds: "Necessidades do Cliente",
     cycleSatisfaction: "Satisfação do Cliente",
     cycleGovernance: "Regido pelas estratégias, políticas, normas, leis e procedimentos de importação e exportação de cada país",
@@ -295,7 +295,8 @@ function About() {
                 </div>
             </div>
 
-            <div data-dc-tpl="86" className="cycle-steps" style={{ gridColumn: 2, display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '14px' }}>
+            <div data-dc-tpl="86-91-wrap" className="cycle-steps-bottom" style={{ gridColumn: 2, display: 'flex', flexDirection: 'column', gap: 'clamp(10px, 2vw, 14px)' }}>
+            <div data-dc-tpl="86" className="cycle-steps" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '14px' }}>
                 <div data-dc-tpl="88" style={{ background: 'rgb(234, 247, 239)', borderRadius: '10px', padding: '18px', minHeight: '110px' }}>
                 <div data-dc-tpl="89" style={{ font: '700 13px Sora, sans-serif', color: 'rgb(63, 168, 115)', marginBottom: '10px' }}>
                     <span className="sc-interp">01</span>
@@ -342,7 +343,7 @@ function About() {
                 </div>
             </div>
 
-            <div data-dc-tpl="91" className="cycle-bottom" style={{ gridColumn: 2, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '14px' }}>
+            <div data-dc-tpl="91" className="cycle-bottom" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '14px' }}>
                 <div 
                 data-dc-tpl="92" 
                 style={{ 
@@ -396,6 +397,7 @@ function About() {
                     {t.bottom3}
                 </div>
                 </div>
+            </div>
             </div>
             </div>
         </div>

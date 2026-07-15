@@ -1,4 +1,5 @@
 import { useLanguage } from '../LanguageContext'
+import './Services.css'
 
 const servicesTranslations = {
   en: {
@@ -279,14 +280,15 @@ function Services() {
         </div>
 
         <div data-dc-tpl="111" style={{ background: 'rgb(238, 244, 240)', padding: '70px 40px' }}>
-            <div 
-            data-dc-tpl="112" 
-            style={{ 
-                maxWidth: '1280px', 
-                margin: '0px auto', 
-                display: 'grid', 
-                gridTemplateColumns: 'repeat(2, 1fr)', 
-                gap: '40px' 
+            <div
+            data-dc-tpl="112"
+            className="services-two-col"
+            style={{
+                maxWidth: '1280px',
+                margin: '0px auto',
+                display: 'grid',
+                gridTemplateColumns: 'repeat(2, 1fr)',
+                gap: '40px'
             }}
             >
             <div data-dc-tpl="113">

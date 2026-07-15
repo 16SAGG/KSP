@@ -1,0 +1,7 @@
+/* Export & Product Supply and Technical & Engineering Support sections */
+@media (max-width: 768px) {
+  .services-two-col {
+    grid-template-columns: 1fr !important;
+    gap: clamp(24px, 6vw, 40px) !important;
+  }
+}

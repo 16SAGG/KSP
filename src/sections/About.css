@@ -13,24 +13,55 @@
   /* Stays pinned in view while the rest of the diagram scrolls past it */
   .cycle-governance {
     order: 2;
-    position: sticky !important;
+    /*position: sticky !important;*/
     top: 76px;
     z-index: 20;
     box-shadow: 0 6px 18px rgba(13, 27, 42, 0.2);
   }
 
-  .cycle-steps {
+  /* Steps (1-5) and the bottom row sit side by side in two columns,
+     each column stacking its own items vertically — mirrors the desktop
+     layout instead of flattening everything into one long column. */
+  .cycle-steps-bottom {
     order: 3;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    gap: clamp(8px, 2.5vw, 14px) !important;
+  }
+
+  /* Bottom items (Control, Quality, HR) on the left — extend vertically */
+  .cycle-bottom {
+    order: 1;
+    flex: 1 1 0;
+    display: flex !important;
+    flex-direction: column !important;
     grid-template-columns: 1fr !important;
   }
 
-  .cycle-bottom {
-    order: 4;
+  .cycle-bottom > div {
+    flex: 1 1 0;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Steps (1-5) on the right */
+  .cycle-steps {
+    order: 2;
+    flex: 1 1 0;
     grid-template-columns: 1fr !important;
   }
 
   .cycle-satisfaction {
-    order: 5;
+    order: 4;
+  }
+}
+
+@media (max-width: 560px) {
+  .cycle-steps > div,
+  .cycle-bottom > div {
+    padding: clamp(10px, 3vw, 18px) !important;
+    min-height: auto !important;
   }
 }
 
