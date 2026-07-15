@@ -64,7 +64,7 @@ function Home() {
                         borderRadius: '14px',
                         padding: 'clamp(16px, 4vw, 24px) clamp(16px, 5vw, 28px)',
                         margin: '0px clamp(-16px, -5vw, -28px)',
-                        maxWidth: '100%',
+                        maxWidth: '700px',
                         minWidth: '280px'
                     }}
                 >
