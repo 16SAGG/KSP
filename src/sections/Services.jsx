@@ -103,148 +103,148 @@ function Services() {
 
   return (
     <div id="services" data-dc-tpl="98" data-screen-label="Services">
-        <div data-dc-tpl="99" style={{ background: 'rgb(13, 27, 42)', padding: '80px 40px 64px' }}>
+        <div data-dc-tpl="99" style={{ background: 'rgb(13, 27, 42)', padding: 'clamp(50px, 10vw, 80px) clamp(20px, 5vw, 40px) clamp(40px, 8vw, 64px)' }}>
             <div data-dc-tpl="100" style={{ maxWidth: '900px', margin: '0px auto', textAlign: 'center' }}>
-            <div 
-                data-dc-tpl="101" 
-                style={{ 
-                font: '700 12.5px "Source Sans 3", sans-serif', 
-                letterSpacing: '2px', 
-                color: 'rgb(111, 207, 151)', 
-                textTransform: 'uppercase', 
-                marginBottom: '14px' 
+            <div
+                data-dc-tpl="101"
+                style={{
+                font: '700 clamp(10px, 2.5vw, 12.5px) "Source Sans 3", sans-serif',
+                letterSpacing: '2px',
+                color: 'rgb(111, 207, 151)',
+                textTransform: 'uppercase',
+                marginBottom: 'clamp(10px, 3vw, 14px)'
                 }}
             >
                 {t.tag}
             </div>
-            <h1 data-dc-tpl="102" style={{ font: '800 36px / 1.25 Sora, sans-serif', color: 'rgb(255, 255, 255)', margin: '0px 0px 16px' }}>
+            <h1 data-dc-tpl="102" style={{ font: '800 clamp(28px, 7vw, 36px) / 1.25 Sora, sans-serif', color: 'rgb(255, 255, 255)', margin: '0px 0px clamp(12px, 3vw, 16px)' }}>
                 {t.title}
             </h1>
-            <p data-dc-tpl="103" style={{ font: '400 16px / 1.6 "Source Sans 3", sans-serif', color: 'rgba(255, 255, 255, 0.75)', margin: '0px' }}>
+            <p data-dc-tpl="103" style={{ font: '400 clamp(14px, 3.5vw, 16px) / 1.6 "Source Sans 3", sans-serif', color: 'rgba(255, 255, 255, 0.75)', margin: '0px' }}>
                 {t.desc}
             </p>
             </div>
         </div>
 
-        <div 
-            data-dc-tpl="104" 
-            style={{ 
-            maxWidth: '1280px', 
-            margin: '0px auto', 
-            padding: '70px 40px', 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(2, 1fr)', 
-            gap: '22px' 
+        <div
+            data-dc-tpl="104"
+            style={{
+            maxWidth: '1280px',
+            margin: '0px auto',
+            padding: 'clamp(40px, 8vw, 70px) clamp(20px, 5vw, 40px)',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: 'clamp(16px, 4vw, 22px)'
             }}
         >
-            <div data-dc-tpl="106" style={{ background: 'rgb(255, 255, 255)', borderRadius: '12px', padding: '30px', border: '1px solid rgba(13, 27, 42, 0.08)' }}>
-                <div data-dc-tpl="107" style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '14px' }}>
-                    <div 
-                    data-dc-tpl="108" 
-                    style={{ 
-                        width: '40px', 
-                        height: '40px', 
-                        borderRadius: '8px', 
-                        background: 'rgb(234, 247, 239)', 
-                        color: 'rgb(63, 168, 115)', 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        justifyContent: 'center', 
-                        font: '700 14px Sora, sans-serif', 
-                        flex: '0 0 auto' 
+            <div data-dc-tpl="106" style={{ background: 'rgb(255, 255, 255)', borderRadius: '12px', padding: 'clamp(20px, 5vw, 30px)', border: '1px solid rgba(13, 27, 42, 0.08)' }}>
+                <div data-dc-tpl="107" style={{ display: 'flex', alignItems: 'center', gap: 'clamp(10px, 2vw, 14px)', marginBottom: 'clamp(10px, 2vw, 14px)' }}>
+                    <div
+                    data-dc-tpl="108"
+                    style={{
+                        width: 'clamp(32px, 8vw, 40px)',
+                        height: 'clamp(32px, 8vw, 40px)',
+                        borderRadius: '8px',
+                        background: 'rgb(234, 247, 239)',
+                        color: 'rgb(63, 168, 115)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        font: '700 clamp(12px, 3vw, 14px) Sora, sans-serif',
+                        flex: '0 0 auto'
                     }}
                     >
                     <span className="sc-interp">01</span>
                     </div>
-                    <div data-dc-tpl="109" style={{ font: '700 18px Sora, sans-serif', color: 'rgb(13, 27, 42)' }}>
+                    <div data-dc-tpl="109" style={{ font: '700 clamp(16px, 4vw, 18px) Sora, sans-serif', color: 'rgb(13, 27, 42)' }}>
                     <span className="sc-interp">{t.s1Title}</span>
                     </div>
                 </div>
-                <div data-dc-tpl="110" style={{ font: '400 14.5px / 1.65 "Source Sans 3", sans-serif', color: 'rgba(22, 35, 47, 0.68)' }}>
+                <div data-dc-tpl="110" style={{ font: '400 clamp(13px, 3.5vw, 14.5px) / 1.65 "Source Sans 3", sans-serif', color: 'rgba(22, 35, 47, 0.68)' }}>
                     <span className="sc-interp">{t.s1Desc}</span>
                 </div>
             </div>
 
-            <div data-dc-tpl="106" style={{ background: 'rgb(255, 255, 255)', borderRadius: '12px', padding: '30px', border: '1px solid rgba(13, 27, 42, 0.08)' }}>
-            <div data-dc-tpl="107" style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '14px' }}>
-                <div 
-                data-dc-tpl="108" 
-                style={{ 
-                    width: '40px', 
-                    height: '40px', 
-                    borderRadius: '8px', 
-                    background: 'rgb(234, 247, 239)', 
-                    color: 'rgb(63, 168, 115)', 
-                    display: 'flex', 
-                    alignItems: 'center', 
-                    justifyContent: 'center', 
-                    font: '700 14px Sora, sans-serif', 
-                    flex: '0 0 auto' 
+            <div data-dc-tpl="106" style={{ background: 'rgb(255, 255, 255)', borderRadius: '12px', padding: 'clamp(20px, 5vw, 30px)', border: '1px solid rgba(13, 27, 42, 0.08)' }}>
+            <div data-dc-tpl="107" style={{ display: 'flex', alignItems: 'center', gap: 'clamp(10px, 2vw, 14px)', marginBottom: 'clamp(10px, 2vw, 14px)' }}>
+                <div
+                data-dc-tpl="108"
+                style={{
+                    width: 'clamp(32px, 8vw, 40px)',
+                    height: 'clamp(32px, 8vw, 40px)',
+                    borderRadius: '8px',
+                    background: 'rgb(234, 247, 239)',
+                    color: 'rgb(63, 168, 115)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    font: '700 clamp(12px, 3vw, 14px) Sora, sans-serif',
+                    flex: '0 0 auto'
                 }}
                 >
                 <span className="sc-interp">02</span>
                 </div>
-                <div data-dc-tpl="109" style={{ font: '700 18px Sora, sans-serif', color: 'rgb(13, 27, 42)' }}>
+                <div data-dc-tpl="109" style={{ font: '700 clamp(16px, 4vw, 18px) Sora, sans-serif', color: 'rgb(13, 27, 42)' }}>
                 <span className="sc-interp">{t.s2Title}</span>
                 </div>
             </div>
-            <div data-dc-tpl="110" style={{ font: '400 14.5px / 1.65 "Source Sans 3", sans-serif', color: 'rgba(22, 35, 47, 0.68)' }}>
+            <div data-dc-tpl="110" style={{ font: '400 clamp(13px, 3.5vw, 14.5px) / 1.65 "Source Sans 3", sans-serif', color: 'rgba(22, 35, 47, 0.68)' }}>
                 <span className="sc-interp">{t.s2Desc}</span>
             </div>
             </div>
 
-            <div data-dc-tpl="106" style={{ background: 'rgb(255, 255, 255)', borderRadius: '12px', padding: '30px', border: '1px solid rgba(13, 27, 42, 0.08)' }}>
-            <div data-dc-tpl="107" style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '14px' }}>
-                <div 
-                data-dc-tpl="108" 
-                style={{ 
-                    width: '40px', 
-                    height: '40px', 
-                    borderRadius: '8px', 
-                    background: 'rgb(234, 247, 239)', 
-                    color: 'rgb(63, 168, 115)', 
-                    display: 'flex', 
-                    alignItems: 'center', 
-                    justifyContent: 'center', 
-                    font: '700 14px Sora, sans-serif', 
-                    flex: '0 0 auto' 
+            <div data-dc-tpl="106" style={{ background: 'rgb(255, 255, 255)', borderRadius: '12px', padding: 'clamp(20px, 5vw, 30px)', border: '1px solid rgba(13, 27, 42, 0.08)' }}>
+            <div data-dc-tpl="107" style={{ display: 'flex', alignItems: 'center', gap: 'clamp(10px, 2vw, 14px)', marginBottom: 'clamp(10px, 2vw, 14px)' }}>
+                <div
+                data-dc-tpl="108"
+                style={{
+                    width: 'clamp(32px, 8vw, 40px)',
+                    height: 'clamp(32px, 8vw, 40px)',
+                    borderRadius: '8px',
+                    background: 'rgb(234, 247, 239)',
+                    color: 'rgb(63, 168, 115)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    font: '700 clamp(12px, 3vw, 14px) Sora, sans-serif',
+                    flex: '0 0 auto'
                 }}
                 >
                 <span className="sc-interp">03</span>
                 </div>
-                <div data-dc-tpl="109" style={{ font: '700 18px Sora, sans-serif', color: 'rgb(13, 27, 42)' }}>
+                <div data-dc-tpl="109" style={{ font: '700 clamp(16px, 4vw, 18px) Sora, sans-serif', color: 'rgb(13, 27, 42)' }}>
                 <span className="sc-interp">{t.s3Title}</span>
                 </div>
             </div>
-            <div data-dc-tpl="110" style={{ font: '400 14.5px / 1.65 "Source Sans 3", sans-serif', color: 'rgba(22, 35, 47, 0.68)' }}>
+            <div data-dc-tpl="110" style={{ font: '400 clamp(13px, 3.5vw, 14.5px) / 1.65 "Source Sans 3", sans-serif', color: 'rgba(22, 35, 47, 0.68)' }}>
                 <span className="sc-interp">{t.s3Desc}</span>
             </div>
             </div>
 
-            <div data-dc-tpl="106" style={{ background: 'rgb(255, 255, 255)', borderRadius: '12px', padding: '30px', border: '1px solid rgba(13, 27, 42, 0.08)' }}>
-            <div data-dc-tpl="107" style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '14px' }}>
-                <div 
-                data-dc-tpl="108" 
-                style={{ 
-                    width: '40px', 
-                    height: '40px', 
-                    borderRadius: '8px', 
-                    background: 'rgb(234, 247, 239)', 
-                    color: 'rgb(63, 168, 115)', 
-                    display: 'flex', 
-                    alignItems: 'center', 
-                    justifyContent: 'center', 
-                    font: '700 14px Sora, sans-serif', 
-                    flex: '0 0 auto' 
+            <div data-dc-tpl="106" style={{ background: 'rgb(255, 255, 255)', borderRadius: '12px', padding: 'clamp(20px, 5vw, 30px)', border: '1px solid rgba(13, 27, 42, 0.08)' }}>
+            <div data-dc-tpl="107" style={{ display: 'flex', alignItems: 'center', gap: 'clamp(10px, 2vw, 14px)', marginBottom: 'clamp(10px, 2vw, 14px)' }}>
+                <div
+                data-dc-tpl="108"
+                style={{
+                    width: 'clamp(32px, 8vw, 40px)',
+                    height: 'clamp(32px, 8vw, 40px)',
+                    borderRadius: '8px',
+                    background: 'rgb(234, 247, 239)',
+                    color: 'rgb(63, 168, 115)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    font: '700 clamp(12px, 3vw, 14px) Sora, sans-serif',
+                    flex: '0 0 auto'
                 }}
                 >
                 <span className="sc-interp">04</span>
                 </div>
-                <div data-dc-tpl="109" style={{ font: '700 18px Sora, sans-serif', color: 'rgb(13, 27, 42)' }}>
+                <div data-dc-tpl="109" style={{ font: '700 clamp(16px, 4vw, 18px) Sora, sans-serif', color: 'rgb(13, 27, 42)' }}>
                 <span className="sc-interp">{t.s4Title}</span>
                 </div>
             </div>
-            <div data-dc-tpl="110" style={{ font: '400 14.5px / 1.65 "Source Sans 3", sans-serif', color: 'rgba(22, 35, 47, 0.68)' }}>
+            <div data-dc-tpl="110" style={{ font: '400 clamp(13px, 3.5vw, 14.5px) / 1.65 "Source Sans 3", sans-serif', color: 'rgba(22, 35, 47, 0.68)' }}>
                 <span className="sc-interp">{t.s4Desc}</span>
             </div>
             </div>
@@ -448,79 +448,81 @@ function Services() {
             </div>
         </div>
 
-        <div data-dc-tpl="129" style={{ maxWidth: '1280px', margin: '0px auto', padding: '70px 40px' }}>
-            <div data-dc-tpl="130" style={{ textAlign: 'center', maxWidth: '760px', margin: '0px auto 44px' }}>
-            <div 
-                data-dc-tpl="131" 
-                style={{ 
-                font: '700 12.5px "Source Sans 3", sans-serif', 
-                letterSpacing: '2px', 
-                color: 'rgb(63, 168, 115)', 
-                textTransform: 'uppercase', 
-                marginBottom: '14px' 
+        <div data-dc-tpl="129" style={{ maxWidth: '1280px', margin: '0px auto', padding: 'clamp(40px, 8vw, 70px) clamp(20px, 5vw, 40px)' }}>
+            <div data-dc-tpl="130" style={{ textAlign: 'center', maxWidth: '760px', margin: '0px auto clamp(30px, 8vw, 44px)' }}>
+            <div
+                data-dc-tpl="131"
+                style={{
+                font: '700 clamp(10px, 2.5vw, 12.5px) "Source Sans 3", sans-serif',
+                letterSpacing: '2px',
+                color: 'rgb(63, 168, 115)',
+                textTransform: 'uppercase',
+                marginBottom: 'clamp(10px, 3vw, 14px)'
                 }}
             >
                 {t.bottomTag}
             </div>
-            <h2 data-dc-tpl="132" style={{ font: '700 30px / 1.3 Sora, sans-serif', color: 'rgb(13, 27, 42)', margin: '0px 0px 16px' }}>
+            <h2 data-dc-tpl="132" style={{ font: '700 clamp(24px, 6vw, 30px) / 1.3 Sora, sans-serif', color: 'rgb(13, 27, 42)', margin: '0px 0px clamp(12px, 3vw, 16px)' }}>
                 {t.bottomTitle}
             </h2>
-            <p data-dc-tpl="133" style={{ font: '400 16px / 1.65 "Source Sans 3", sans-serif', color: 'rgba(22, 35, 47, 0.68)', margin: '0px' }}>
+            <p data-dc-tpl="133" style={{ font: '400 clamp(14px, 3.5vw, 16px) / 1.65 "Source Sans 3", sans-serif', color: 'rgba(22, 35, 47, 0.68)', margin: '0px' }}>
                 {t.bottomDesc}
             </p>
             </div>
-            <div 
-            data-dc-tpl="134" 
-            style={{ 
-                display: 'grid', 
-                gridTemplateColumns: 'repeat(4, 1fr)', 
-                gap: '22px' 
+            <div
+            data-dc-tpl="134"
+            style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr',
+                gap: 'clamp(16px, 4vw, 22px)',
+                maxWidth: '600px',
+                margin: '0px auto'
             }}
             >
-            <div data-dc-tpl="136" style={{ background: 'rgb(255, 255, 255)', borderRadius: '12px', padding: '28px 24px', border: '1px solid rgba(13, 27, 42, 0.08)' }}>
-                <div data-dc-tpl="137" style={{ font: '800 20px Sora, sans-serif', color: 'rgb(169, 220, 191)', marginBottom: '12px' }}>
+            <div data-dc-tpl="136" style={{ background: 'rgb(255, 255, 255)', borderRadius: '12px', padding: 'clamp(20px, 5vw, 28px) clamp(16px, 4vw, 24px)', border: '1px solid rgba(13, 27, 42, 0.08)' }}>
+                <div data-dc-tpl="137" style={{ font: '800 clamp(18px, 5vw, 20px) Sora, sans-serif', color: 'rgb(169, 220, 191)', marginBottom: 'clamp(8px, 2vw, 12px)' }}>
                 <span className="sc-interp">01</span>
                 </div>
-                <div data-dc-tpl="138" style={{ font: '700 16px / 1.35 Sora, sans-serif', color: 'rgb(13, 27, 42)', marginBottom: '10px' }}>
+                <div data-dc-tpl="138" style={{ font: '700 clamp(14px, 4vw, 16px) / 1.35 Sora, sans-serif', color: 'rgb(13, 27, 42)', marginBottom: 'clamp(8px, 2vw, 10px)' }}>
                 <span className="sc-interp">{t.b1Title}</span>
                 </div>
-                <div data-dc-tpl="139" style={{ font: '400 14px / 1.6 "Source Sans 3", sans-serif', color: 'rgba(22, 35, 47, 0.65)' }}>
+                <div data-dc-tpl="139" style={{ font: '400 clamp(12px, 3vw, 14px) / 1.6 "Source Sans 3", sans-serif', color: 'rgba(22, 35, 47, 0.65)' }}>
                 <span className="sc-interp">{t.b1Desc}</span>
                 </div>
             </div>
 
-            <div data-dc-tpl="136" style={{ background: 'rgb(255, 255, 255)', borderRadius: '12px', padding: '28px 24px', border: '1px solid rgba(13, 27, 42, 0.08)' }}>
-                <div data-dc-tpl="137" style={{ font: '800 20px Sora, sans-serif', color: 'rgb(169, 220, 191)', marginBottom: '12px' }}>
+            <div data-dc-tpl="136" style={{ background: 'rgb(255, 255, 255)', borderRadius: '12px', padding: 'clamp(20px, 5vw, 28px) clamp(16px, 4vw, 24px)', border: '1px solid rgba(13, 27, 42, 0.08)' }}>
+                <div data-dc-tpl="137" style={{ font: '800 clamp(18px, 5vw, 20px) Sora, sans-serif', color: 'rgb(169, 220, 191)', marginBottom: 'clamp(8px, 2vw, 12px)' }}>
                 <span className="sc-interp">02</span>
                 </div>
-                <div data-dc-tpl="138" style={{ font: '700 16px / 1.35 Sora, sans-serif', color: 'rgb(13, 27, 42)', marginBottom: '10px' }}>
+                <div data-dc-tpl="138" style={{ font: '700 clamp(14px, 4vw, 16px) / 1.35 Sora, sans-serif', color: 'rgb(13, 27, 42)', marginBottom: 'clamp(8px, 2vw, 10px)' }}>
                 <span className="sc-interp">{t.b2Title}</span>
                 </div>
-                <div data-dc-tpl="139" style={{ font: '400 14px / 1.6 "Source Sans 3", sans-serif', color: 'rgba(22, 35, 47, 0.65)' }}>
+                <div data-dc-tpl="139" style={{ font: '400 clamp(12px, 3vw, 14px) / 1.6 "Source Sans 3", sans-serif', color: 'rgba(22, 35, 47, 0.65)' }}>
                 <span className="sc-interp">{t.b2Desc}</span>
                 </div>
             </div>
 
-            <div data-dc-tpl="136" style={{ background: 'rgb(255, 255, 255)', borderRadius: '12px', padding: '28px 24px', border: '1px solid rgba(13, 27, 42, 0.08)' }}>
-                <div data-dc-tpl="137" style={{ font: '800 20px Sora, sans-serif', color: 'rgb(169, 220, 191)', marginBottom: '12px' }}>
+            <div data-dc-tpl="136" style={{ background: 'rgb(255, 255, 255)', borderRadius: '12px', padding: 'clamp(20px, 5vw, 28px) clamp(16px, 4vw, 24px)', border: '1px solid rgba(13, 27, 42, 0.08)' }}>
+                <div data-dc-tpl="137" style={{ font: '800 clamp(18px, 5vw, 20px) Sora, sans-serif', color: 'rgb(169, 220, 191)', marginBottom: 'clamp(8px, 2vw, 12px)' }}>
                 <span className="sc-interp">03</span>
                 </div>
-                <div data-dc-tpl="138" style={{ font: '700 16px / 1.35 Sora, sans-serif', color: 'rgb(13, 27, 42)', marginBottom: '10px' }}>
+                <div data-dc-tpl="138" style={{ font: '700 clamp(14px, 4vw, 16px) / 1.35 Sora, sans-serif', color: 'rgb(13, 27, 42)', marginBottom: 'clamp(8px, 2vw, 10px)' }}>
                 <span className="sc-interp">{t.b3Title}</span>
                 </div>
-                <div data-dc-tpl="139" style={{ font: '400 14px / 1.6 "Source Sans 3", sans-serif', color: 'rgba(22, 35, 47, 0.65)' }}>
+                <div data-dc-tpl="139" style={{ font: '400 clamp(12px, 3vw, 14px) / 1.6 "Source Sans 3", sans-serif', color: 'rgba(22, 35, 47, 0.65)' }}>
                 <span className="sc-interp">{t.b3Desc}</span>
                 </div>
             </div>
 
-            <div data-dc-tpl="136" style={{ background: 'rgb(255, 255, 255)', borderRadius: '12px', padding: '28px 24px', border: '1px solid rgba(13, 27, 42, 0.08)' }}>
-                <div data-dc-tpl="137" style={{ font: '800 20px Sora, sans-serif', color: 'rgb(169, 220, 191)', marginBottom: '12px' }}>
+            <div data-dc-tpl="136" style={{ background: 'rgb(255, 255, 255)', borderRadius: '12px', padding: 'clamp(20px, 5vw, 28px) clamp(16px, 4vw, 24px)', border: '1px solid rgba(13, 27, 42, 0.08)' }}>
+                <div data-dc-tpl="137" style={{ font: '800 clamp(18px, 5vw, 20px) Sora, sans-serif', color: 'rgb(169, 220, 191)', marginBottom: 'clamp(8px, 2vw, 12px)' }}>
                 <span className="sc-interp">04</span>
                 </div>
-                <div data-dc-tpl="138" style={{ font: '700 16px / 1.35 Sora, sans-serif', color: 'rgb(13, 27, 42)', marginBottom: '10px' }}>
+                <div data-dc-tpl="138" style={{ font: '700 clamp(14px, 4vw, 16px) / 1.35 Sora, sans-serif', color: 'rgb(13, 27, 42)', marginBottom: 'clamp(8px, 2vw, 10px)' }}>
                 <span className="sc-interp">{t.b4Title}</span>
                 </div>
-                <div data-dc-tpl="139" style={{ font: '400 14px / 1.6 "Source Sans 3", sans-serif', color: 'rgba(22, 35, 47, 0.65)' }}>
+                <div data-dc-tpl="139" style={{ font: '400 clamp(12px, 3vw, 14px) / 1.6 "Source Sans 3", sans-serif', color: 'rgba(22, 35, 47, 0.65)' }}>
                 <span className="sc-interp">{t.b4Desc}</span>
                 </div>
             </div>

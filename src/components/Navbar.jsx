@@ -50,7 +50,7 @@ function Navbar() {
         <div
          style={{
             margin: '0px auto',
-            padding: '0px 40px',
+            padding: '0px clamp(16px, 5vw, 40px)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
@@ -65,27 +65,27 @@ function Navbar() {
                 }}
                 href='#home'
             >
-                <img 
+                <img
                     src="ksp-logo.png"
                     alt="KSP Projectos — Kinetic Scale Projectos, LDA"
                     style={{
-                        height: '57px',
+                        height: 'clamp(40px, 10vw, 57px)',
                         objectFit: 'contain',
                         display:'block'
                     }}
                 />
             </a>
             
-            <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 'clamp(12px, 3vw, 24px)' }}>
                 {/* Language Switcher */}
-                <div 
-                    style={{ 
-                        display: 'flex', 
+                <div
+                    style={{
+                        display: 'flex',
                         alignItems: 'center',
-                        gap: '6px', 
-                        font: '600 13.5px "Source Sans 3", sans-serif',
+                        gap: '6px',
+                        font: '600 clamp(11px, 2.5vw, 13.5px) "Source Sans 3", sans-serif',
                         background: 'rgba(13, 27, 42, 0.03)',
-                        padding: '6px 12px',
+                        padding: '6px clamp(8px, 2vw, 12px)',
                         borderRadius: '20px',
                         border: '1px solid rgba(13, 27, 42, 0.08)'
                     }}
@@ -141,10 +141,10 @@ function Navbar() {
                     <a
                         style={{
                             textDecoration: 'none',
-                            font: '600 14.5px "Source Sans 3", sans-serif',
+                            font: '600 clamp(12px, 3vw, 14.5px) "Source Sans 3", sans-serif',
                             color: 'rgb(22, 35, 47)',
                             border: '1px solid rgba(13, 27, 42, 0.22)',
-                            padding: '10px 16px',
+                            padding: 'clamp(8px, 2vw, 10px) clamp(12px, 3vw, 16px)',
                             borderRadius: '7px'
                         }}
                         href="KSP Brochure - v2.pdf"
@@ -156,10 +156,10 @@ function Navbar() {
                     <a
                         style={{
                             textDecoration: 'none',
-                            font: '700 14.5px "Source Sans 3", sans-serif',
+                            font: '700 clamp(12px, 3vw, 14.5px) "Source Sans 3", sans-serif',
                             color: 'rgb(22, 35, 47)',
                             background : 'rgb(111, 207, 151)',
-                            padding: '10px 18px',
+                            padding: 'clamp(8px, 2vw, 10px) clamp(12px, 3vw, 18px)',
                             borderRadius: '7px'
                         }}
                         href='#contact'

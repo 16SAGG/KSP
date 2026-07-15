@@ -34,7 +34,7 @@ function Home() {
         <div
             style={{
                 position:'relative',
-                minHeight:'640px',
+                minHeight:'max(400px, 60vh)',
                 display:'flex',
                 flexDirection:'column',
                 justifyContent:'flex-end',
@@ -46,13 +46,13 @@ function Home() {
             <div
                 style={{
                     margin: '0px auto',
-                    padding: '90px 40px 70px',
+                    padding: 'clamp(40px, 10vw, 90px) clamp(20px, 5vw, 40px) clamp(30px, 8vw, 70px)',
                     width: '100%',
                     boxSizing: 'border-box',
                     display:'flex',
                     justifyContent: 'space-between',
                     alignItems:'flex-end',
-                    gap:'40px',
+                    gap:'clamp(20px, 5vw, 40px)',
                     flexWrap: 'wrap'
                 }}
             >
@@ -62,36 +62,37 @@ function Home() {
                         background:'rgba(10, 20, 32, 0.38)',
                         backdropFilter: 'blur(2px)',
                         borderRadius: '14px',
-                        padding: '24px 28px',
-                        margin: '0px -28px',
-                        maxWidth: '660px'
+                        padding: 'clamp(16px, 4vw, 24px) clamp(16px, 5vw, 28px)',
+                        margin: '0px clamp(-16px, -5vw, -28px)',
+                        maxWidth: '100%',
+                        minWidth: '280px'
                     }}
                 >
                     <p
                         style={{
-                            font: '700 12.5px "Source Sans 3", sans-serif',
+                            font: '700 clamp(10px, 2.5vw, 12.5px) "Source Sans 3", sans-serif',
                             letterSpacing:'2px',
                             color: 'rgb(111, 207, 151)',
                             textTransform: 'uppercase',
-                            marginBottom: '16px'
+                            marginBottom: 'clamp(12px, 3vw, 16px)'
                         }}
                     >
                         {t.tag}
                     </p>
                     <h1
                         style={{
-                            font: '800 46px / 1.15 Sora, sans-serif',
+                            font: '800 clamp(28px, 8vw, 46px) / 1.15 Sora, sans-serif',
                             color: '#fff',
-                            margin: '0px 0px 20px'
+                            margin: '0px 0px clamp(12px, 3vw, 20px)'
                         }}
                     >
                         {t.title}
                     </h1>
                     <p
                         style={{
-                            font: '400 17px / 1.6 "Source Sans 3", sans-serif',
+                            font: '400 clamp(14px, 4vw, 17px) / 1.6 "Source Sans 3", sans-serif',
                             color: 'rgba(255, 255, 255, 0.82)',
-                            margin: '0px 0px 28px',
+                            margin: '0px 0px clamp(16px, 4vw, 28px)',
                             maxWidth: '560px'
                         }}
                     >
@@ -100,18 +101,19 @@ function Home() {
                     <div
                         style={{
                             display:'flex',
-                            gap:'14px',
+                            gap:'clamp(10px, 3vw, 14px)',
                             flexWrap:'wrap'
                         }}
                     >
                         <a
                             style={{
                                 textDecoration: 'none',
-                                font: '700 14.5px "Source Sans 3", sans-serif',
+                                font: '700 clamp(12px, 3vw, 14.5px) "Source Sans 3", sans-serif',
                                 color: 'rgb(22, 35, 47)',
                                 background : 'rgb(111, 207, 151)',
-                                padding: '14px 26px',
-                                borderRadius: '7px'
+                                padding: 'clamp(10px, 2.5vw, 14px) clamp(16px, 4vw, 26px)',
+                                borderRadius: '7px',
+                                transition: 'all 0.2s ease'
                             }}
                             href='#contact'
                         >
@@ -120,18 +122,19 @@ function Home() {
                         <a
                             style={{
                                 textDecoration: 'none',
-                                font: '600 14.5px "Source Sans 3", sans-serif',
+                                font: '600 clamp(12px, 3vw, 14.5px) "Source Sans 3", sans-serif',
                                 color: 'rgb(255, 255, 255)',
                                 border: '1px solid rgba(255, 255, 255, 0.35)',
-                                padding: '14px 26px',
-                                borderRadius: '7px'
+                                padding: 'clamp(10px, 2.5vw, 14px) clamp(16px, 4vw, 26px)',
+                                borderRadius: '7px',
+                                transition: 'all 0.2s ease'
                             }}
                             href="KSP Brochure - v2.pdf"
                             download
                         >
                             {t.downloadBrochure}
                         </a>
-                        
+
                     </div>
                 </div>
             </div>
@@ -150,66 +153,65 @@ function Home() {
                 <div data-dc-tpl="38" style={{
                     maxWidth: '1280px',
                     margin: '0px auto',
-                    padding: '90px 40px',
+                    padding: 'clamp(50px, 10vw, 90px) clamp(20px, 5vw, 40px)',
                     display: 'flex',
-                    gap: '64px',
+                    gap: 'clamp(30px, 7vw, 64px)',
                     alignItems: 'center',
                     flexWrap:'wrap'
                 }}>
-                    <div data-dc-tpl="39" style={{ flex: '1 1 420px', minWidth: '320px' }}>
-                        <h2 
-                            data-dc-tpl="40" 
-                            style={{ 
-                                font: '700 32px / 1.25 Sora, sans-serif', 
-                                color: 'rgb(13, 27, 42)', 
-                                margin: '0px 0px 20px' 
+                    <div data-dc-tpl="39" style={{ flex: '1 1 clamp(280px, 100%, 420px)', minWidth: '280px' }}>
+                        <h2
+                            data-dc-tpl="40"
+                            style={{
+                                font: '700 clamp(22px, 6vw, 32px) / 1.25 Sora, sans-serif',
+                                color: 'rgb(13, 27, 42)',
+                                margin: '0px 0px clamp(12px, 3vw, 20px)'
                             }}
                         >
                             {t.dualTitle}
                         </h2>
-                        
-                        <p 
-                            data-dc-tpl="41" 
-                            style={{ 
-                                font: '400 16.5px / 1.7 "Source Sans 3", sans-serif', 
-                                color: 'rgba(22, 35, 47, 0.72)', 
-                                margin: '0px 0px 16px' 
+
+                        <p
+                            data-dc-tpl="41"
+                            style={{
+                                font: '400 clamp(14px, 3.5vw, 16.5px) / 1.7 "Source Sans 3", sans-serif',
+                                color: 'rgba(22, 35, 47, 0.72)',
+                                margin: '0px 0px clamp(12px, 3vw, 16px)'
                             }}
                         >
-                            <span 
-                                data-dc-tpl="42" 
-                                style={{ 
-                                    color: 'rgba(22, 35, 47, 0.72)', 
-                                    fontSize: '16.5px', 
-                                    lineHeight: '28px' 
+                            <span
+                                data-dc-tpl="42"
+                                style={{
+                                    color: 'rgba(22, 35, 47, 0.72)',
+                                    lineHeight: '1.7'
                                 }}
                             >
                                 {t.dualDesc1}
                             </span>
                         </p>
-                        
-                        <p 
-                            data-dc-tpl="43" 
-                            style={{ 
-                                font: '400 16.5px / 1.7 "Source Sans 3", sans-serif', 
-                                color: 'rgba(22, 35, 47, 0.72)', 
-                                margin: '0px' 
+
+                        <p
+                            data-dc-tpl="43"
+                            style={{
+                                font: '400 clamp(14px, 3.5vw, 16.5px) / 1.7 "Source Sans 3", sans-serif',
+                                color: 'rgba(22, 35, 47, 0.72)',
+                                margin: '0px'
                             }}
                         >
                             {t.dualDesc2}
                         </p>
                     </div>
-                    <div data-dc-tpl="44" style={{ flex: '1 1 380px', minWidth: '300px' }}>
-                        <img 
-                            data-dc-tpl="45" 
-                            src="engineer-3d-model.png" 
-                            alt={t.imgAlt} 
-                            style={{ 
-                            width: '100%', 
-                            borderRadius: '12px', 
-                            display: 'block', 
-                            boxShadow: 'rgba(13, 27, 42, 0.16) 0px 20px 44px' 
-                            }} 
+                    <div data-dc-tpl="44" style={{ flex: '1 1 clamp(280px, 100%, 380px)', minWidth: '280px' }}>
+                        <img
+                            data-dc-tpl="45"
+                            src="engineer-3d-model.png"
+                            alt={t.imgAlt}
+                            style={{
+                            width: '100%',
+                            borderRadius: '12px',
+                            display: 'block',
+                            boxShadow: 'rgba(13, 27, 42, 0.16) 0px 20px 44px'
+                            }}
                         />
                     </div>
                 </div>

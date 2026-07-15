@@ -38,16 +38,18 @@
   position: absolute;
   top: 76px;
   right: 0;
-  width: 320px;
+  width: clamp(280px, 100vw - 20px, 320px);
   background: #FFF;
   border-left: 1px solid rgba(13, 27, 42, 0.08);
   border-bottom: 1px solid rgba(13, 27, 42, 0.08);
   box-shadow: -5px 10px 30px rgba(13, 27, 42, 0.08);
-  padding: 30px 40px;
+  padding: clamp(20px, 5vw, 30px) clamp(20px, 5vw, 40px);
   flex-direction: column;
-  gap: 24px;
+  gap: clamp(16px, 4vw, 24px);
   z-index: 49;
   animation: slideDown 0.3s ease-out forwards;
+  max-height: calc(100vh - 76px);
+  overflow-y: auto;
 }
 
 .nav-mobile-menu.open {
@@ -57,13 +59,13 @@
 .nav-mobile-links {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: clamp(14px, 3vw, 20px);
 }
 
 .nav-mobile-links a {
   padding: 8px 0;
   transition: all 0.2s ease;
-  font: 600 15px "Source Sans 3", sans-serif;
+  font: 600 clamp(13px, 3.5vw, 15px) "Source Sans 3", sans-serif;
   color: rgb(22, 35, 47);
   text-decoration: none;
 }
@@ -76,8 +78,8 @@
 .nav-mobile-actions {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding-top: 24px;
+  gap: clamp(8px, 2vw, 12px);
+  padding-top: clamp(16px, 3vw, 24px);
   border-top: 1px solid rgba(13, 27, 42, 0.08);
 }
 
