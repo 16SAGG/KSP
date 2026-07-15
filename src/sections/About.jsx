@@ -1,4 +1,5 @@
 import { useLanguage } from '../LanguageContext'
+import './About.css'
 
 const aboutTranslations = {
   en: {
@@ -232,20 +233,22 @@ function About() {
 
             <div
                 data-dc-tpl="79"
+                className="cycle-wrap"
                 style={{
                     display: 'grid', gridTemplateColumns: 'clamp(100px, 20%, 140px) 1fr clamp(100px, 20%, 140px)', gap: 'clamp(10px, 2vw, 14px)'
                 }}
             >
-            <div 
-                data-dc-tpl="80" 
-                style={{ 
-                gridArea: '1 / 1 / 4', 
-                borderRadius: '10px', 
-                display: 'flex', 
-                alignItems: 'center', 
-                justifyContent: 'center', 
-                textAlign: 'center', 
-                padding: '20px', 
+            <div
+                data-dc-tpl="80"
+                className="cycle-needs"
+                style={{
+                gridArea: '1 / 1 / 4',
+                borderRadius: '10px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                textAlign: 'center',
+                padding: '20px',
                 backgroundColor: 'rgb(13, 27, 42)'
                 }}
             >
@@ -253,36 +256,38 @@ function About() {
                 {t.cycleNeeds}
                 </div>
             </div>
-            
-            <div 
-                data-dc-tpl="82" 
-                style={{ 
-                gridColumn: 2, 
-                background: 'rgb(231, 237, 250)', 
-                borderRadius: '10px', 
-                padding: '18px 24px', 
-                display: 'flex', 
-                alignItems: 'center', 
-                justifyContent: 'center', 
-                textAlign: 'center' 
+
+            <div
+                data-dc-tpl="82"
+                className="cycle-governance"
+                style={{
+                gridColumn: 2,
+                background: 'rgb(231, 237, 250)',
+                borderRadius: '10px',
+                padding: 'clamp(14px, 4vw, 18px) clamp(16px, 4vw, 24px)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                textAlign: 'center'
                 }}
             >
-                <div data-dc-tpl="83" style={{ font: '700 15px / 1.5 "Source Sans 3", sans-serif', color: 'rgb(39, 64, 107)' }}>
+                <div data-dc-tpl="83" style={{ font: '700 clamp(13px, 3.5vw, 15px) / 1.5 "Source Sans 3", sans-serif', color: 'rgb(39, 64, 107)' }}>
                 {t.cycleGovernance}
                 </div>
             </div>
-            
-            <div 
-                data-dc-tpl="84" 
-                style={{ 
-                gridArea: '1 / 3 / 4', 
-                background: 'rgb(63, 168, 115)', 
-                borderRadius: '10px', 
-                display: 'flex', 
-                alignItems: 'center', 
-                justifyContent: 'center', 
-                textAlign: 'center', 
-                padding: '20px' 
+
+            <div
+                data-dc-tpl="84"
+                className="cycle-satisfaction"
+                style={{
+                gridArea: '1 / 3 / 4',
+                background: 'rgb(63, 168, 115)',
+                borderRadius: '10px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                textAlign: 'center',
+                padding: '20px'
                 }}
             >
                 <div data-dc-tpl="85" style={{ font: '700 17px Sora, sans-serif', color: 'rgb(13, 27, 42)' }}>
@@ -290,7 +295,7 @@ function About() {
                 </div>
             </div>
 
-            <div data-dc-tpl="86" style={{ gridColumn: 2, display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '14px' }}>
+            <div data-dc-tpl="86" className="cycle-steps" style={{ gridColumn: 2, display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '14px' }}>
                 <div data-dc-tpl="88" style={{ background: 'rgb(234, 247, 239)', borderRadius: '10px', padding: '18px', minHeight: '110px' }}>
                 <div data-dc-tpl="89" style={{ font: '700 13px Sora, sans-serif', color: 'rgb(63, 168, 115)', marginBottom: '10px' }}>
                     <span className="sc-interp">01</span>
@@ -337,7 +342,7 @@ function About() {
                 </div>
             </div>
 
-            <div data-dc-tpl="91" style={{ gridColumn: 2, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '14px' }}>
+            <div data-dc-tpl="91" className="cycle-bottom" style={{ gridColumn: 2, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '14px' }}>
                 <div 
                 data-dc-tpl="92" 
                 style={{ 
