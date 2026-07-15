@@ -1,0 +1,41 @@
+/* Customer Needs -> Customer Satisfaction cycle diagram */
+@media (max-width: 768px) {
+  .cycle-wrap {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .cycle-needs {
+    order: 1;
+  }
+
+  /* Stays pinned in view while the rest of the diagram scrolls past it */
+  .cycle-governance {
+    order: 2;
+    position: sticky !important;
+    top: 76px;
+    z-index: 20;
+    box-shadow: 0 6px 18px rgba(13, 27, 42, 0.2);
+  }
+
+  .cycle-steps {
+    order: 3;
+    grid-template-columns: 1fr !important;
+  }
+
+  .cycle-bottom {
+    order: 4;
+    grid-template-columns: 1fr !important;
+  }
+
+  .cycle-satisfaction {
+    order: 5;
+  }
+}
+
+@media (max-width: 480px) {
+  .cycle-governance {
+    top: 68px;
+  }
+}
