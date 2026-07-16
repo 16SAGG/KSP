@@ -71,39 +71,56 @@ function Contact(){
         message: ''
     });
 
+    const [loading, setLoading] = useState(false);
+    const [formStatus, setFormStatus] = useState(null);
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
+        if (formStatus) setFormStatus(null);
     };
 
-    const isFormFilled = 
-    formData.name.trim() !== '' && 
-    formData.email.trim() !== '' && 
+    const isFormFilled =
+    formData.name.trim() !== '' &&
+    formData.email.trim() !== '' &&
     formData.message.trim() !== '';
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        
-        if (!isFormFilled) return
 
-        const { name, email, company, message } = formData;
-        
-        // Correo de destino
-        const emailTo = "contato@ksprojectos.pt"; 
-        
-        // Asunto del correo electrónico
-        const subject = encodeURIComponent(`${t.mailSubject} - ${name}`);
-        
-        // Cuerpo del correo (formateando los saltos de línea con \n)
-        const body = encodeURIComponent(
-        `${t.mailLabelName}: ${name}\n` +
-        `${t.mailLabelEmail}: ${email}\n` +
-        `${t.mailLabelCompany}: ${company || t.mailLabelNotSpecified}\n\n` +
-        `${t.mailLabelMessage}:\n${message}`
-        );
+        if (!isFormFilled || loading) return;
 
-        // Abrir el cliente de correo nativo del usuario con los datos pre-llenados
-        window.location.href = `mailto:${emailTo}?subject=${subject}&body=${body}`;
+        setLoading(true);
+        setFormStatus(null);
+
+        try {
+            const response = await fetch('/contact.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                setFormStatus({ type: 'success', message: data.message });
+                setFormData({ name: '', email: '', company: '', message: '' });
+            } else {
+                setFormStatus({
+                    type: 'error',
+                    message: data.message || (data.errors && data.errors[0]) || 'An error occurred'
+                });
+            }
+        } catch (error) {
+            setFormStatus({
+                type: 'error',
+                message: 'Unable to send message. Please check your connection and try again.'
+            });
+        } finally {
+            setLoading(false);
+        }
     };
 
     return(
@@ -295,22 +312,41 @@ function Contact(){
                         />
                     </div>
 
-                    <div 
-                        data-dc-tpl="215" 
-                        className="scp2" 
-                        style={{ 
-                        font: '700 14.5px "Source Sans 3", sans-serif', 
-                        color: !isFormFilled ? 'rgba(13, 27, 42, 0.4)' : 'rgb(13, 27, 42)', 
-                        background: !isFormFilled ? 'rgba(13, 27, 42, 0.12)' : 'rgb(111, 207, 151)', 
-                        padding: '14px', 
-                        borderRadius: '8px', 
-                        textAlign: 'center', 
-                        cursor: isFormFilled ? 'pointer' : 'not-allowed', 
-                        marginTop: '6px' 
+                    {formStatus && (
+                        <div
+                            style={{
+                                padding: '12px 14px',
+                                borderRadius: '8px',
+                                font: '500 13px "Source Sans 3", sans-serif',
+                                textAlign: 'center',
+                                marginTop: '6px',
+                                backgroundColor: formStatus.type === 'success' ? 'rgba(111, 207, 151, 0.15)' : 'rgba(255, 87, 87, 0.15)',
+                                color: formStatus.type === 'success' ? 'rgb(63, 168, 115)' : 'rgb(255, 87, 87)',
+                                border: `1px solid ${formStatus.type === 'success' ? 'rgb(111, 207, 151)' : 'rgb(255, 87, 87)'}`
+                            }}
+                        >
+                            {formStatus.message}
+                        </div>
+                    )}
+
+                    <div
+                        data-dc-tpl="215"
+                        className="scp2"
+                        style={{
+                        font: '700 14.5px "Source Sans 3", sans-serif',
+                        color: !isFormFilled || loading ? 'rgba(13, 27, 42, 0.4)' : 'rgb(13, 27, 42)',
+                        background: !isFormFilled || loading ? 'rgba(13, 27, 42, 0.12)' : 'rgb(111, 207, 151)',
+                        padding: '14px',
+                        borderRadius: '8px',
+                        textAlign: 'center',
+                        cursor: (isFormFilled && !loading) ? 'pointer' : 'not-allowed',
+                        marginTop: formStatus ? '12px' : '6px',
+                        opacity: loading ? 0.7 : 1,
+                        transition: 'all 0.2s ease'
                         }}
                         onClick={handleSubmit}
                     >
-                        {t.sendButton}
+                        {loading ? 'Sending...' : t.sendButton}
                     </div>
                     </div>
                 </div>
